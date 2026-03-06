@@ -1,5 +1,5 @@
 import Product from "../../model/productModel.js"
-import Wishlist from "../../model/WishListModel.js"
+import Wishlist from "../../model/WishlistModel.js"
 
 const toggleWishlist = async(req,res) =>{
     try {
