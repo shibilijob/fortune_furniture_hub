@@ -4,7 +4,7 @@ import protect from "../middlewares/authUsers.js";
 import { getAllCategories, getProductDetails, getProductsBycategory } from "../controllers/userController/productController.js";
 import { addToCart, getCart, removeFromCart, updateCartQty } from "../controllers/userController/cartController.js";
 import { createOrder, getUserOrders } from "../controllers/userController/orderController.js";
-import { toggleWishlist, getWishlist } from "../controllers/userController/wishListController.js";
+import { toggleWishlist, getWishlist } from "../controllers/userController/WishlistController.js";
 import logoutUser from "../controllers/logout.js";
 import validateRequest from "../middlewares/validateRequest.js";
 import { loginValidatorSchema, registerValidatorSchema } from "../validation/userValidation.js";
