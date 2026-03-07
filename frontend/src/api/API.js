@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/user",
+  baseURL:"https://fortune-furniture-hub-tg79.vercel.app/",
   withCredentials: true
 })
 
