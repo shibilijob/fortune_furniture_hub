@@ -15,7 +15,7 @@ const toggleWishlist = async(req,res) =>{
         return res.status(400).json({message:'product id is not valid'})
        }
 
-       const item = await Wishlist.findOne({productId,userId})
+       const item = await Wishlist.findOne({userId,productId})
 
        if(item){
         await Wishlist.deleteOne({ userId, productId })
