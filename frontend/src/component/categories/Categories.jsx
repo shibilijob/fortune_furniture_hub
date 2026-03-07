@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
+import API from '../../api/API'
 
 function Categories() {
     const [categories, setCategories] = useState([])
@@ -8,7 +8,7 @@ function Categories() {
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const res = await axios.get("http://localhost:5000/user/categories")
+                const res = await API.get("/user/categories")
                 setCategories(res.data.categories)
             } catch (error) {
                 console.error(error)

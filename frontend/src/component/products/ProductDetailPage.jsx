@@ -1,8 +1,8 @@
-import axios from 'axios';
 import React,{useContext, useEffect, useState} from 'react'
 import {useNavigate, useParams} from 'react-router-dom'
 import { dataContext } from '../../context/AppContext';
 import swal from 'sweetalert';
+import API from '../../api/API';
 
 
 function ProductDetailPage() {
@@ -14,7 +14,7 @@ function ProductDetailPage() {
   const navigate=useNavigate()
 
   useEffect(()=>{
-  axios.get(`http://localhost:5000/user/productDetails/${id}`)
+  API.get(`/user/productDetails/${id}`)
   .then((res)=>{
     setProduct(res.data.product)
   })

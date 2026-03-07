@@ -21,7 +21,7 @@ function NavBar() {
 
   async function handleLogout() {
     try {
-      await API.post("/logout")   
+      await API.post("/user/logout")   
       setUser(null);
       localStorage.removeItem("user") 
       setShowPop(false);

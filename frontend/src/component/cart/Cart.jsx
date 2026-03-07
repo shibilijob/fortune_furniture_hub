@@ -17,7 +17,7 @@ function Cart() {
       quantity: item.quantity
     }));
 
-    await API.post("/createOrder", {
+    await API.post("/user/createOrder", {
       products,
       orderId
     });

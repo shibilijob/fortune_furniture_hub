@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
 import { useSearchParams, useNavigate } from 'react-router-dom'
+import API from '../../api/API'
 
 function Products() {
 
@@ -13,8 +13,8 @@ function Products() {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const res = await axios.get(
-                    `http://localhost:5000/user/productByCategories?category=${category}`
+                const res = await API.get(
+                    `/user/productByCategories?category=${category}`
                 )
                 setProducts(res.data.products)
             } catch (error) {
