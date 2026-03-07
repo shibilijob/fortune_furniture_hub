@@ -14,7 +14,7 @@ connectDB()
 
 app.use(cors({
   origin: ["http://localhost:5173",
-  "https://fortune-furniture-hub.vercel.app/"],
+  "https://fortune-furniture-hub.vercel.app"],
   credentials: true
 }))
 app.use(express.json())
@@ -24,7 +24,8 @@ app.use('/admin',adminRouts)
 app.get("/",(req,res)=>{
   res.send("api working")
 })
-const port= process.env.PORT || 5000
-app.listen(port,()=>{
-    console.log(`server running in ${port}`);
-})
+// const port= process.env.PORT || 5000
+// app.listen(port,()=>{
+//     console.log(`server running in ${port}`);
+// })
+export default app
