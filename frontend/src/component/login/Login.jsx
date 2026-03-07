@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import swal from 'sweetalert';
-import axios from 'axios';
 import { dataContext } from '../../context/AppContext';
 import API from '../../api/API';
 
@@ -18,7 +17,7 @@ const handleLogin = async (e) => {
 
   try {
     const response = await API.post(
-      "/login",
+      "/user/login",
       { email, password },
       { withCredentials: true }
     );
