@@ -40,7 +40,7 @@ function AppContext({children}) {
 
   async function fetchCart() {
     try {
-      const res = await API.get("/getCart");
+      const res = await API.get("/user/getCart");
       setCartItems(res.data.cart);
     } catch (error) {
       console.log(error.response?.data || error.message);
@@ -50,7 +50,7 @@ function AppContext({children}) {
   // Add an item to the cart
   async function addToCart(product) {
   try {
-    await API.post("/addToCart", {
+    await API.post("/user/addToCart", {
       productId: product._id,
       quantity: 1,
     });
@@ -64,7 +64,7 @@ function AppContext({children}) {
   // remove product from cart
   async function removeFromCart(productId) {
   try {
-    await API.delete(`/removeFromCart/${productId}`);
+    await API.delete(`/user/removeFromCart/${productId}`);
     fetchCart();
   } catch (error) {
     console.log(error.response?.data || error.message);
@@ -74,7 +74,7 @@ function AppContext({children}) {
   // Update item quantity (+/-)
   async function updateQuantity(productId, action) {
   try {
-    await API.put(`/updateQty/${productId}`, {
+    await API.put(`/user/updateQty/${productId}`, {
       action,
     });
 
