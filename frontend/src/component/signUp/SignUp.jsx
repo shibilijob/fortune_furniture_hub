@@ -35,7 +35,7 @@ function SignUp() {
     }
 
     try {
-        const { data } = await API.post("/user/registerUser",
+        const { data } = await API.post("/registerUser",
           newUser,
           { withCredentials: true })
 
