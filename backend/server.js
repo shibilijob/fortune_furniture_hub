@@ -21,7 +21,9 @@ app.use(express.json())
 app.use(cookieParser())
 app.use('/user',userRouts)
 app.use('/admin',adminRouts)
-
+app.get("/",(req,res)=>{
+  res.send("api working")
+})
 const port= process.env.PORT || 5000
 app.listen(port,()=>{
     console.log(`server running in ${port}`);
