@@ -14,7 +14,8 @@ connectDB()
 
 app.use(cors({
   origin: ["http://localhost:5173",
-  "https://fortune-furniture-hub.vercel.app"],
+  "https://fortune-furniture-hub.vercel.app",
+  "https://fortune-furniture-1h3pqs8ss-shibilijobs-projects.vercel.app"],
   credentials: true
 }))
 app.use(express.json())
