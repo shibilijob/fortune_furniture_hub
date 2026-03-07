@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { dataContext } from '../../context/AppContext';
+import API from '../../api/API';
 
 function SignUp() {
 
@@ -34,7 +35,7 @@ function SignUp() {
     }
 
     try {
-        const { data } = await axios.post("http://localhost:5000/user/registerUser",
+        const { data } = await API.post("/registerUser",
           newUser,
           { withCredentials: true })
 

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import swal from 'sweetalert';
 import axios from 'axios';
 import { dataContext } from '../../context/AppContext';
+import API from '../../api/API';
 
 function Login() {
   const [email, setemail] = useState('');
@@ -16,8 +17,8 @@ const handleLogin = async (e) => {
   setError("");
 
   try {
-    const response = await axios.post(
-      "http://localhost:5000/user/login",
+    const response = await API.post(
+      "/login",
       { email, password },
       { withCredentials: true }
     );
