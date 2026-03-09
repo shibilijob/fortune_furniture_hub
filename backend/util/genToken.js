@@ -7,7 +7,6 @@ const generateToken = (res,id)=>{
         httpOnly:true,
         secure:process.env.NODE_ENV !== 'development',
         sameSite:'none',
-        domain: ".vercel.app",
         maxAge:30*24*60*60*1000
     })
 }
